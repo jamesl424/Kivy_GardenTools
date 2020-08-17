@@ -1,0 +1,74 @@
+<Plants_Screen>
+    name: 'Plants_Screen'
+    id: Plants_Screen
+
+    ScrollView:
+        size_hint: (1, 1)
+        MDList:
+            id: plants_list
+
+            elevation: 10
+            orientation: 'vertical'
+            spacing: '10dp'
+            padding: '5dp'
+
+            Plants_List_Item:
+                canvas:
+                    RoundedRectangle:
+                        id: plants_card_rectangle
+                        radius:[15,]
+                        pos: self.pos
+                        size: self.size
+                        source: "Resources/Images/carrots_1.jpg"
+                MDBoxLayout:
+                    orientation: 'horizontal'
+                    size_hint: (1, 0.4)
+                    md_bg_color: (0, 0, 0, 0.4)
+                    radius:[15]
+                    border_radius:15
+
+                    MDSeparator:
+                        size_hint_x: .1
+
+                    MDLabel:
+                        text: 'Carrots'
+                        theme_text_color: 'Custom'
+                        text_color: 1,1,1,1
+
+            Plants_List_Item:
+                MDLabel:
+                    text: 'test'
+            Plants_List_Item:
+                MDLabel:
+                    text: 'test'
+            Plants_List_Item:
+                MDLabel:
+                    text: 'test'
+            Plants_List_Item:
+                MDLabel:
+                    text: 'test'
+            Plants_List_Item:
+                MDLabel:
+                    text: 'test'
+            Plants_List_Item:
+                MDLabel:
+                    text: 'test'
+            Plants_List_Item:
+                MDLabel:
+                    text: 'test'
+
+
+
+<Plants_List_Item>
+    size_hint: (None, None)
+    height: '120dp'
+    width: '500dp'
+    orientation: 'vertical'
+    radius:[15]
+    border_radius:15
+
+    MDLabel:
+        size_hint_y: 0.6
+        text: ''
+
+
