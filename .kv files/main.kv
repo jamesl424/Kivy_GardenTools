@@ -1,53 +1,62 @@
-MDBoxLayout:
-    id: root_widget
+BoxLayout:
     orientation: 'vertical'
 
     MDToolbar:
-        title: 'Gardening Tools'
-        left_action_items: [["arrow-left", lambda x: app.callback()]]
-        pos_hint: {'top': 1}
-        size_hint_x: 1
+        title: 'Gardening Toolset'
+        md_bg_color: .2, .2, .2, 1
+        specific_text_color: 1, 1, 1, 1
+        right_action_items: [['settings', lambda x: print('Settings')]]
+
+#TODO Create SettingsScreen and allow calling
 
     MDBottomNavigation:
-        #panel_color: .2, .2, .2, 1
+        panel_color: .2, .2, .2, 1
 
         MDBottomNavigationItem:
-            name: 'Screen 1'
+            name: 'HomeScreen'
             text: 'Home'
             icon: 'home'
 
-            Home_Screen
+            MDLabel:
+                text: 'Home'
+                halign: 'center'
 
         MDBottomNavigationItem:
-            name: 'Screen 2'
+            name: 'PlantsScreen'
             text: 'Plants'
             icon: 'carrot'
 
-            Plants_Screen
+            PlantsScreen
 
         MDBottomNavigationItem:
-            name: 'Screen 3'
+            name: 'TasksScreen'
             text: 'Tasks'
             icon: 'note-multiple'
 
-            Tasks_Screen
+            MDLabel:
+                text: 'Tasks'
+                halign: 'center'
 
         MDBottomNavigationItem:
-            name: 'screen 3'
-            text: 'JS'
-            icon: 'language-javascript'
+            name: 'WikiScreen'
+            text: 'Wiki'
+            icon: 'web'
 
             MDLabel:
-                text: 'JS'
+                text: 'Wiki'
                 halign: 'center'
-<Screen_Manager>:
-    id: screen_manager
-    size_hint_y: 1.0 - Toolbar.height/root.height
 
-    Home_Screen
-    Plants_Screen
-    Tasks_Screen
-    Wiki_Screen
-    Settings_Screen
+
+
+
+
+
+
+
+
+
+
+
+
 
 

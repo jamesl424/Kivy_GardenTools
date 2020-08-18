@@ -1,2 +1,23 @@
-#TODO Setup Bottom Navigation Drawer
-#TODO Setup Screen Manager
+Root:
+    MDToolbar:
+        Title:
+        right_action_item: [['settings', # function to open a SettingsScreen]]
+    MDBottomNavigation:
+
+        HomeScreen:
+
+        PlantsScreen:
+            ScrollView:
+                MDList:
+                    MDTextButton:
+                        on_press: # display Screen2_1
+                    MDTextButton:
+                        on_press: # display Screen2_2
+                    MDTextButton:
+                        on_press: # display Screen2_3
+                    MDTextButton:
+                        on_press: # display Screen2_4
+
+        TasksScreen:
+
+        WikiScreen:
