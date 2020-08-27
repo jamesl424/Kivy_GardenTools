@@ -1,10 +1,16 @@
+#TODO Build 'Back Button' function to allow reversal to Plants_Home from any plant screen (from within Toolbar)
+
 <PlantsScreen>:
     on_enter: sm2.current = 'Plants_Home'
     ScreenManager:
         id: sm2
+
+
         Plants_Home:
-        Screen2_1:
-            name: 'Screen2_1'
+        Apples:
+            name: 'Apples'
+        Carrots:
+            name: 'Carrots'
         Screen2_2:
             name: 'Screen2_2'
             MDLabel:
@@ -19,27 +25,62 @@
         padding: '20dp'
         ScrollView:
             MDList:
+                elevation: 10
+                orientation: 'vertical'
+                spacing: '10dp'
+
+                ListLetters:                                                                                          #A
+                    text: 'A'
+
                 PlantsListContainer:
                     on_touch_down:
                         root.manager.transition.direction = 'left'
-                        root.manager.current = 'Screen2_1'
+                        root.manager.current = 'Apples'
+
+
+                    canvas:
+                        RoundedRectangle:
+                            radius:[15,]
+                            pos: self.pos
+                            size: self.size
+                            source: "Resources/Images/apples_2.jpg"
+                    MDIconButton:
+                        icon: 'arrow-right'
+                    MDSeparator:
+                        size_hint_y: 0.6
+                        radius:[15,]
+                        border_radius:15
+
                     PlantsListContent:
-                        MDLabel:
+                        PlantLabels:
+                            text: 'Apples'
+
+                ListLetters:                                                                                          #B
+                    text: 'B'
+
+                ListLetters:                                                                                          #C
+                    text: 'C'
+
+                PlantsListContainer:
+                    on_touch_down:
+                        root.manager.transition.direction = 'left'
+                        root.manager.current = 'Carrots'
+                    canvas:
+                        RoundedRectangle:
+                            radius:[15,]
+                            pos: self.pos
+                            size: self.size
+                            source: "Resources/Images/carrots_1.jpg"
+                    MDSeparator:
+                        size_hint_y: 0.6
+                        radius:[15,]
+                        border_radius:15
+
+                    PlantsListContent:
+                        PlantLabels:
                             text: 'Carrots'
-                            theme_text_color: 'Custom'
-                            text_color: [1, 1, 1, 1]
 
 
-
-<Screen2_1>:
-    name: 'Screen2_1'
-    MDLabel:
-        text: 'Screen2_1'
-    MDTextButton:
-        text: 'Back to home'
-        on_press:
-            root.manager.transition.direction = 'right'
-            root.manager.current = 'Plants_Home'
 
 
 
@@ -54,21 +95,24 @@
     height: '125'
     width: '500'
     orientation: 'vertical'
+    radius:[15,]
     border_radius:15
-    canvas:
-        RoundedRectangle:
-            radius:[15,]
-            pos: self.pos
-            size: self.size
-            source: "Resources/Images/carrots_1.jpg"
-    MDSeparator:
-        size_hint_y: 0.6
-        radius:[15,]
-        border_radius:15
+
 
 <PlantsListContent>:
     orientation: 'vertical'
     radius:[15,]
     border_radius:15
-    size_hint_y: 0.4
+    size_hint_y: 0.3
     md_bg_color: (.9, .9, .9, .3)
+    padding: '20dp'
+
+<ListLetters>:
+    halign: 'center'
+    font_size: '50dp'
+    size_hint: (1, None)
+    height: '40dp'
+
+<PlantLabels>:
+    theme_text_color: 'Custom'
+    text_color: [1, 1, 1, 1]
