@@ -32,20 +32,15 @@
                 ListLetters:                                                                                          #A
                     text: 'A'
 
-                PlantsListContainer:
-                    on_touch_down:
-                        root.manager.transition.direction = 'left'
-                        root.manager.current = 'Apples'
-
-
+                PlantsListContainer:                                                                                  ##
                     canvas:
                         RoundedRectangle:
                             radius:[15,]
                             pos: self.pos
                             size: self.size
                             source: "Resources/Images/apples_2.jpg"
-                    MDIconButton:
-                        icon: 'arrow-right'
+
+
                     MDSeparator:
                         size_hint_y: 0.6
                         radius:[15,]
@@ -53,7 +48,15 @@
 
                     PlantsListContent:
                         PlantLabels:
-                            text: 'Apples'
+                            text: 'Apples'                                                                            ##
+
+                        MDIconButton:
+                            icon: 'arrow-right-bold'
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            on_press:
+                                root.manager.transition.direction = 'left'
+                                root.manager.current = 'Apples'
+
 
                 ListLetters:                                                                                          #B
                     text: 'B'
@@ -62,9 +65,6 @@
                     text: 'C'
 
                 PlantsListContainer:
-                    on_touch_down:
-                        root.manager.transition.direction = 'left'
-                        root.manager.current = 'Carrots'
                     canvas:
                         RoundedRectangle:
                             radius:[15,]
@@ -79,6 +79,13 @@
                     PlantsListContent:
                         PlantLabels:
                             text: 'Carrots'
+
+                        MDIconButton:
+                            icon: 'arrow-right-bold'
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            on_press:
+                                root.manager.transition.direction = 'left'
+                                root.manager.current = 'Carrots'
 
 
 
@@ -100,7 +107,7 @@
 
 
 <PlantsListContent>:
-    orientation: 'vertical'
+    orientation: 'horizontal'
     radius:[15,]
     border_radius:15
     size_hint_y: 0.3
@@ -116,3 +123,13 @@
 <PlantLabels>:
     theme_text_color: 'Custom'
     text_color: [1, 1, 1, 1]
+
+<Label_1>:
+    font_name: 'Fonts/Montserrat-SemiBold'
+    font_size: "18dp"
+    halign: "center"
+    valign: "middle"
+
+<Icon_1>:
+    halign: "center"
+    valign: "middle"

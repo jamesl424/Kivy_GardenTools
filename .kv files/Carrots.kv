@@ -1,0 +1,156 @@
+<Carrots>:
+    name: 'Carrots'
+    MDBoxLayout:
+        id: exp_container
+        orientation: 'vertical'
+
+
+        MDCard:
+            size_hint: (1, None)
+            elevation: 10
+            height: '125'
+            orientation: 'vertical'
+            pos_hint: {"center_x": .5, "center_y": .5}
+            canvas:
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+                    source: "Resources/Images/carrots_1.jpg"
+            MDBoxLayout:
+                padding: '10dp'
+                md_bg_color: (0.6, 0.6, 0.6, 0.4)
+                MDLabel:
+                    text: 'Carrots'
+                    theme_text_color: "Custom"
+                    text_color: 1, 1, 1, 1
+                    font_size: '30dp'
+                    font_name: 'Fonts/Montserrat-Medium'
+        MDTabs:
+            background_color: (.8, .8, .8, 1)
+            text_color_normal: 1, 1, 0, 1
+            text_color_active: 1, 1, 0, 1
+
+            Carrot_Wiki:
+            Carrot_Plants:
+            Carrot_Photos:
+
+<Carrot_Wiki>:
+    text: 'Wiki'
+    ScrollView:
+
+        MDBoxLayout:
+            orientation: 'vertical'
+
+            MDCard:
+                elevation: 5
+                orientation: 'vertical'
+                size_hint_y: .20
+
+                MDLabel:
+                    size_hint_y: .3
+                    text: 'Sow/Harvest Times'
+                    font_name: 'Fonts/Montserrat-SemiBold'
+                    font_size: '25dp'
+
+                MDBoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_y: .7
+
+                    MDBoxLayout:
+                        size_hint_x: .3
+                        orientation: 'vertical'
+                        MDLabel:
+                            font_name: 'Fonts/Montserrat-SemiBold'
+                            text: ''
+                        MDLabel:
+                            font_name: 'Fonts/Montserrat-SemiBold'
+                            text: 'Plant'
+                        MDLabel:
+                            font_name: 'Fonts/Montserrat-SemiBold'
+                            text: 'Harvest'
+
+                    MDGridLayout:
+                        cols: 12
+                        Label_1:
+                            text: 'J'
+                        Label_1:
+                            text: 'F'
+                        Label_1:
+                            text: 'M'
+                        Label_1:
+                            text: 'A'
+                        Label_1:
+                            text: 'M'
+                        Label_1:
+                            text: 'J'
+                        Label_1:
+                            text: 'J'
+                        Label_1:
+                            text: 'A'
+                        Label_1:
+                            text: 'S'
+                        Label_1:
+                            text: 'O'
+                        Label_1:
+                            text: 'N'
+                        Label_1:
+                            text: 'D'
+                        Icon_1:                                                                                 #Jan
+                            icon: "circle-outline"
+                        Icon_1:                                                                                 #Feb
+                            icon: "circle"
+                        Icon_1:                                                                                 #Mar
+                            icon: "circle"
+                        Icon_1:                                                                                 #Apr
+                            icon: "circle"
+                        Icon_1:                                                                                 #May
+                            icon: "circle"
+                        Icon_1:
+                            icon: "circle"
+                        Icon_1:
+                            icon: "circle"
+                        Icon_1:
+                            icon: "circle-outline"
+                        Icon_1:
+                            icon: "circle-outline"
+                        Icon_1:
+                            icon: "circle-outline"
+                        Icon_1:
+                            icon: "circle-outline"
+                        Icon_1 :
+                            icon: "circle-outline"
+                        Icon_1:
+                            icon: "circle-outline"
+                        Icon_1:
+                            icon: "circle-outline"
+                        Icon_1:
+                            icon: "circle-outline"
+                        Icon_1:
+                            icon: "circle-outline"
+                        Icon_1:
+                            icon: "circle-outline"
+                        Icon_1:
+                            icon: "circle-outline"
+                        Icon_1:
+                            icon: "circle-outline"
+                        Icon_1:
+                            icon: "circle-outline"
+                        Icon_1:
+                            icon: "circle-outline"
+                        Icon_1:
+                            icon: "circle-outline"
+                        Icon_1:
+                            icon: "circle-outline"
+                        Icon_1 :
+                            icon: "circle-outline"
+            MDLabel:
+                text: 'filler'
+
+
+
+
+    MDTextButton:
+        text: 'Back to home'
+        on_press:
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'Plants_Home'
