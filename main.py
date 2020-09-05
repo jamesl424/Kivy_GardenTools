@@ -10,6 +10,7 @@ import webbrowser
 ########################################################################################################################
 
 # Kivy Imports
+from kivy import Config
 from kivy.core.text import LabelBase
 from kivy.core.window import Window
 from kivy.graphics.vertex_instructions import RoundedRectangle
@@ -45,6 +46,7 @@ from kivymd.uix.tab import MDTabsBase
 
 
 Window.size = (540, 960)
+Config.set('graphics', 'resizable', True)
 
 # kivy.metrics.MetricsBase.dpi = '440'
 
@@ -146,13 +148,13 @@ class ItemConfirm(OneLineAvatarIconListItem) :
 """.kv File Loading"""
 ########################################################################################################################
 
-Builder.load_file('.kv files/Plants_Screen.kv')
-Builder.load_file('.kv files/sm2_Screens.kv')
-Builder.load_file('.kv files/Apples.kv')
-Builder.load_file('.kv files/Carrots.kv')
-# Builder.load_file('.kv files/Tasks_Screen.kv')
-# Builder.load_file('.kv files/Wiki_Screen.kv')
-# Builder.load_file('.kv files/Settings_Screen.kv')
+Builder.load_file('kv files/Plants_Screen.kv')
+Builder.load_file('kv files/sm2_Screens.kv')
+Builder.load_file('kv files/Apples.kv')
+Builder.load_file('kv files/Carrots.kv')
+# Builder.load_file('kv files/Tasks_Screen.kv')
+# Builder.load_file('kv files/Wiki_Screen.kv')
+# Builder.load_file('kv files/Settings_Screen.kv')
 
 ########################################################################################################################
 
@@ -170,7 +172,7 @@ class GardenTools(MDApp) :
 
 
 
-        return Builder.load_file('.kv files/main.kv')
+        return Builder.load_file('kv files/main.kv')
 
 
 
