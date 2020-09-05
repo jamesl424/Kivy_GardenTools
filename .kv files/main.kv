@@ -5,7 +5,7 @@ BoxLayout:
         id: Toolbar
         title: 'Gardening Toolset'
         font_name: 'Fonts/Montserrat-Medium'
-        md_bg_color: .2, .2, .2, 1
+        md_bg_color: self.theme_cls.primary_dark
         specific_text_color: 1, 1, 1, 1
         right_action_items: [['settings', lambda x: print('Settings')]]
 
@@ -13,7 +13,7 @@ BoxLayout:
 #TODO Create SettingsScreen and allow calling
 
     MDBottomNavigation:
-        panel_color: .2, .2, .2, 1
+        panel_color: self.theme_cls.primary_dark
 
         MDBottomNavigationItem:
             name: 'HomeScreen'
@@ -21,6 +21,12 @@ BoxLayout:
             icon: 'home'
 
             MDLabel:
+                canvas:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: "Resources/Images/home_1.jpg"
+                mg_bg_color: .7, .7, .7, 1
                 text: 'Home'
                 halign: 'center'
 

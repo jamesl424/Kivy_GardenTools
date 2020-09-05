@@ -5,11 +5,12 @@
 
 # Python Imports
 
+import webbrowser
+
 ########################################################################################################################
 
 # Kivy Imports
-
-
+from kivy.core.text import LabelBase
 from kivy.core.window import Window
 from kivy.graphics.vertex_instructions import RoundedRectangle
 from kivy.lang import Builder
@@ -23,6 +24,7 @@ from kivy.uix.screenmanager import ScreenManager, Screen, RiseInTransition, Fall
 
 
 from kivymd.app import MDApp
+from kivymd.font_definitions import theme_font_styles
 from kivymd.theming import ThemeManager
 from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.uix.button import MDTextButton, MDFlatButton
@@ -30,7 +32,7 @@ from kivymd.uix.card import MDCard
 from kivymd.uix.dialog import MDDialog
 from kivymd.uix.expansionpanel import MDExpansionPanel
 from kivymd.uix.label import MDLabel, MDIcon
-from kivymd.uix.list import OneLineAvatarIconListItem
+from kivymd.uix.list import OneLineAvatarIconListItem, OneLineIconListItem
 from kivymd.uix.screen import MDScreen
 from kivymd.uix.tab import MDTabsBase
 
@@ -55,7 +57,13 @@ Window.size = (540, 960)
 class Label_1(MDLabel):
     pass
 
+class Label_2(MDLabel):
+    pass
+
 class Icon_1(MDIcon):
+    pass
+
+class Variety_Info_Item(OneLineIconListItem):
     pass
 
 class PlantLabels(MDLabel):
@@ -78,6 +86,15 @@ class Apples(MDScreen):
 
 class Carrots(MDScreen) :
     class Carrot_Wiki(FloatLayout, MDTabsBase):
+        def adelaide_open(self):
+            webbrowser.open_new('https://www.thompson-morgan.com/p/carrot-adelaide-f1-hybrid/781TM')
+        def nantes_open(self):
+            webbrowser.open_new('https://www.suttons.co.uk/Gardening/Vegetable-Seeds/Popular-Vegetable-Seeds/'
+                                'Carrot-Seeds/Carrot-Seeds---Early-Nantes-5_MH266.htm')
+        def chantenay_open(self):
+            webbrowser.open_new('https://www.suttons.co.uk/Gardening/Vegetable-Seeds/Popular-Vegetable-Seeds/'
+                                'Carrot-Seeds/Carrot-Seeds---Chantenay-Red-Cored-2_157335.htm')
+    class Carrot_Guide(FloatLayout, MDTabsBase):
         pass
     class Carrot_Plants(FloatLayout, MDTabsBase):
         pass
@@ -145,6 +162,14 @@ class GardenTools(MDApp) :
     dialog = None
 
     def build(self) :
+
+        self.theme_cls.primary_palette = "Green"
+        self.theme_cls.primary_hue = "400"
+        self.theme_cls.accent_pallette = "Yellow"
+        self.theme_cls.accent_hue = "600"
+
+
+
         return Builder.load_file('.kv files/main.kv')
 
 

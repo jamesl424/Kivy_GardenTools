@@ -117,6 +117,7 @@
 <ListLetters>:
     halign: 'center'
     font_size: '50dp'
+    font_name: 'Fonts/Montserrat-Medium'
     size_hint: (1, None)
     height: '40dp'
 
@@ -129,7 +130,23 @@
     font_size: "18dp"
     halign: "center"
     valign: "middle"
+    theme_text_color: "Custom"
+    text_color: self.theme_cls.primary_color
+
+<Label_2>:
+    font_name: 'Fonts/Montserrat-Medium'
+    font_size: "15dp"
+    halign: "left"
+    valign: "middle"
+    size_hint: (1, None)
+    size: self.texture_size
+    theme_text_color: "Custom"
+    text_color: self.theme_cls.primary_color
 
 <Icon_1>:
+    font_size: "15dp"
     halign: "center"
     valign: "middle"
+
+
+<Variety_Info_Item>:

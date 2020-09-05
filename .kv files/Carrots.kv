@@ -17,8 +17,17 @@
                     size: self.size
                     source: "Resources/Images/carrots_1.jpg"
             MDBoxLayout:
+                orientation: 'horizontal'
                 padding: '10dp'
                 md_bg_color: (0.6, 0.6, 0.6, 0.4)
+                MDIconButton:
+                    icon: 'arrow-left'
+                    theme_text_color: "Custom"
+                    text_color: 1, 1, 1, 1
+                    pos_hint: {"center_x": .5, "center_y": .5}
+                    on_press:
+                        root.manager.transition.direction = 'right'
+                        root.manager.current = 'Plants_Home'
                 MDLabel:
                     text: 'Carrots'
                     theme_text_color: "Custom"
@@ -26,50 +35,66 @@
                     font_size: '30dp'
                     font_name: 'Fonts/Montserrat-Medium'
         MDTabs:
-            background_color: (.8, .8, .8, 1)
+            background_color: self.theme_cls.primary_light
             text_color_normal: 1, 1, 0, 1
             text_color_active: 1, 1, 0, 1
+            elevation: 10
 
             Carrot_Wiki:
+            Carrot_Guide
             Carrot_Plants:
             Carrot_Photos:
 
 <Carrot_Wiki>:
     text: 'Wiki'
     ScrollView:
-
-        MDBoxLayout:
+        size_hint: (1, 1)
+        id: plants_scroll
+        MDList:
             orientation: 'vertical'
+            spacing: '10dp'
 
             MDCard:
                 elevation: 5
                 orientation: 'vertical'
-                size_hint_y: .20
+                size_hint: (1, None)
+                height: '120dp'
+
 
                 MDLabel:
-                    size_hint_y: .3
+                    size_hint_y: None
+                    height: '50dp'
                     text: 'Sow/Harvest Times'
-                    font_name: 'Fonts/Montserrat-SemiBold'
+                    font_name: 'Fonts/Montserrat-Medium'
                     font_size: '25dp'
 
                 MDBoxLayout:
                     orientation: 'horizontal'
                     size_hint_y: .7
 
-                    MDBoxLayout:
-                        size_hint_x: .3
-                        orientation: 'vertical'
-                        MDLabel:
-                            font_name: 'Fonts/Montserrat-SemiBold'
-                            text: ''
-                        MDLabel:
-                            font_name: 'Fonts/Montserrat-SemiBold'
-                            text: 'Plant'
-                        MDLabel:
-                            font_name: 'Fonts/Montserrat-SemiBold'
-                            text: 'Harvest'
 
                     MDGridLayout:
+                        row_default_height: '20dp'
+                        row_force_default: True
+                        size_hint_x: .3
+
+                        cols: 1
+                        MDLabel:
+                            font_name: 'Fonts/Montserrat-Medium'
+                            text: ''
+                        MDLabel:
+                            font_name: 'Fonts/Montserrat-Medium'
+                            text: 'Plant'
+                            theme_text_color: "Custom"
+                            text_color: self.theme_cls.primary_color
+                        MDLabel:
+                            font_name: 'Fonts/Montserrat-Medium'
+                            text: 'Harvest'
+                            theme_text_color: "Custom"
+                            text_color: self.theme_cls.primary_color
+                    MDGridLayout:
+                        row_default_height: '20dp'
+                        row_force_default: True
                         cols: 12
                         Label_1:
                             text: 'J'
@@ -96,7 +121,7 @@
                         Label_1:
                             text: 'D'
                         Icon_1:                                                                                 #Jan
-                            icon: "circle-outline"
+                            icon: "circle"
                         Icon_1:                                                                                 #Feb
                             icon: "circle"
                         Icon_1:                                                                                 #Mar
@@ -105,52 +130,200 @@
                             icon: "circle"
                         Icon_1:                                                                                 #May
                             icon: "circle"
-                        Icon_1:
+                        Icon_1:                                                                                 #June
                             icon: "circle"
-                        Icon_1:
+                        Icon_1:                                                                                 #July
                             icon: "circle"
-                        Icon_1:
+                        Icon_1:                                                                                 #August
                             icon: "circle-outline"
-                        Icon_1:
+                        Icon_1:                                                                                 #September
                             icon: "circle-outline"
-                        Icon_1:
+                        Icon_1:                                                                                 #October
                             icon: "circle-outline"
-                        Icon_1:
+                        Icon_1:                                                                                 #November
                             icon: "circle-outline"
-                        Icon_1 :
+                        Icon_1 :                                                                                #December
                             icon: "circle-outline"
-                        Icon_1:
+                        Icon_1:                                                                                 #Jan
                             icon: "circle-outline"
-                        Icon_1:
+                        Icon_1:                                                                                 #Feb
                             icon: "circle-outline"
-                        Icon_1:
+                        Icon_1:                                                                                 #Mar
                             icon: "circle-outline"
-                        Icon_1:
+                        Icon_1:                                                                                 #Apr
+                            icon: "circle"
+                        Icon_1:                                                                                 #May
+                            icon: "circle"
+                        Icon_1:                                                                                 #June
+                            icon: "circle"
+                        Icon_1:                                                                                 #July
+                            icon: "circle"
+                        Icon_1:                                                                                 #August
+                            icon: "circle"
+                        Icon_1:                                                                                 #September
+                            icon: "circle"
+                        Icon_1:                                                                                 #October
+                            icon: "circle"
+                        Icon_1:                                                                                 #November
+                            icon: "circle"
+                        Icon_1 :                                                                                #December
                             icon: "circle-outline"
-                        Icon_1:
-                            icon: "circle-outline"
-                        Icon_1:
-                            icon: "circle-outline"
-                        Icon_1:
-                            icon: "circle-outline"
-                        Icon_1:
-                            icon: "circle-outline"
-                        Icon_1:
-                            icon: "circle-outline"
-                        Icon_1:
-                            icon: "circle-outline"
-                        Icon_1:
-                            icon: "circle-outline"
-                        Icon_1 :
-                            icon: "circle-outline"
+            MDCard:
+                elevation: 5
+                orientation: 'vertical'
+                size_hint: (1, None)
+                height: '200dp'
+
+                MDLabel:
+                    size_hint_y: None
+                    height: '50dp'
+                    text: 'Recommended Varieties'
+                    font_name: 'Fonts/Montserrat-Medium'
+                    font_size: '25dp'
+                Variety_Info_Item:
+                    text: '\'Adelaide\' F1 Hybrid'
+                    halign: 'left'
+
+                    IconLeftWidget:
+                        icon: 'information'
+                        on_press:
+                            root.adelaide_open()
+
+                Variety_Info_Item:
+                    text: 'Early Nantes 5'
+                    halign: 'left'
+                    IconLeftWidget:
+                        icon: 'information'
+                        on_press:
+                            root.nantes_open()
+
+                Variety_Info_Item:
+                    text: 'Chantenay Red Cored 2'
+                    halign: 'left'
+                    IconLeftWidget:
+                        icon: 'information'
+                        on_press:
+                            root.chantenay_open()
+
+
+            MDLabel:
+                text: 'filler'
+
+            MDLabel:
+                text: 'filler'
+            MDLabel:
+                text: 'filler'
+            MDLabel:
+                text: 'filler'
+            MDLabel:
+                text: 'filler'
+            MDLabel:
+                text: 'filler'
+            MDLabel:
+                text: 'filler'
+            MDLabel:
+                text: 'filler'
+            MDLabel:
+                text: 'filler'
+            MDLabel:
+                text: 'filler'
+            MDLabel:
+                text: 'filler'
+            MDLabel:
+                text: 'filler'
+            MDLabel:
+                text: 'filler'
+            MDLabel:
+                text: 'filler'
+            MDLabel:
+                text: 'filler'
+            MDLabel:
+                text: 'filler'
+            MDLabel:
+                text: 'filler'
             MDLabel:
                 text: 'filler'
 
 
+<Carrot_Guide>:
+    text: 'Guide'
+    ScrollView:
+        MDList:
+            orientation: 'vertical'
+
+            MDCard:
+                elevation: 0
+                orientation: 'vertical'
+                size_hint: (1, None)
+                height: '120dp'
 
 
-    MDTextButton:
-        text: 'Back to home'
-        on_press:
-            root.manager.transition.direction = 'right'
-            root.manager.current = 'Plants_Home'
+                MDLabel:
+                    size_hint_y: None
+                    height: '50dp'
+                    text: 'Sowing'
+                    font_name: 'Fonts/Montserrat-Medium'
+                    font_size: '25dp'
+
+                Label_2:
+                    text: "- Sow thinly into finely raked/loose soil to a depth of 1/2"
+                Label_2:
+                    text: '- Seedlings thinned to roughly 2\" apart.'
+                Label_2:
+                    text: '- Rows kept 6" apart'
+
+            MDCard:
+                size_hint: (1, None)
+                elevation: 10
+                height: '211dp'
+                orientation: 'vertical'
+                pos_hint: {"center_x": .5, "center_y": .5}
+                canvas:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: "Resources/Images/carrots_2.jpg"
+
+            MDCard:
+                elevation: 5
+                orientation: 'vertical'
+                size_hint: (1, None)
+                height: '390dp'
+
+
+                MDLabel:
+                    size_hint_y: None
+                    height: '50dp'
+                    text: 'Growing'
+                    font_name: 'Fonts/Montserrat-Medium'
+                    font_size: '25dp'
+
+                Label_2:
+                    text: '- Ensure plants are watered frequently enough to prevent soil completely drying'
+                Label_2:
+                    text: '- Avoid over-watering, especially in the final stages of growth as this can cause rot/growth cracks.'
+                Label_2:
+                    text: '- Horticultural fleece can be used for early planters to protect from frost.  This can also protect from Carrot Fly'
+
+                MDLabel:
+                    size_hint_y: None
+                    height: '50dp'
+                    text: 'Containers'
+                    font_name: 'Fonts/Montserrat-LightItalic'
+                    font_size: '20dp'
+                Label_2:
+                    text: '- Sufficient depth for root development (dependant on variety)'
+                Label_2:
+                    text: '- Sufficient drainage to prevent stunted/forked growth'
+                Label_2:
+                    text: '- More frequent watering.  Mulch can be used to help maintain moisture'
+                MDLabel:
+                    size_hint_y: None
+                    height: '50dp'
+                    text: 'Open Ground'
+                    font_name: 'Fonts/Montserrat-LightItalic'
+                    font_size: '20dp'
+                Label_2:
+                    text: '- Well drained, stone free, ideally without clay for best growth area.)'
+                Label_2:
+                    text: '- Early cultivars covered with fleece/cloches.'
