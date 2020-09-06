@@ -45,8 +45,8 @@ from kivymd.uix.tab import MDTabsBase
 
 # Config Set.
 
-kivy.require("1.10.1")
-Window.size = (540, 960)
+kivy.require("1.11.1") # If issues - use 1.10.1 - apply same in .spec
+#Window.size = (540, 960)
 Config.set('graphics', 'resizable', True)
 
 # kivy.metrics.MetricsBase.dpi = '440'
