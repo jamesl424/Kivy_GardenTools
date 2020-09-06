@@ -4,12 +4,13 @@
 ########################################################################################################################
 
 # Python Imports
-
+import sys
 import webbrowser
 
 ########################################################################################################################
 
 # Kivy Imports
+import kivy
 from kivy import Config
 from kivy.core.text import LabelBase
 from kivy.core.window import Window
@@ -23,7 +24,7 @@ from kivy.uix.screenmanager import ScreenManager, Screen, RiseInTransition, Fall
 
 # KivyMD Imports
 
-
+import kivymd
 from kivymd.app import MDApp
 from kivymd.font_definitions import theme_font_styles
 from kivymd.theming import ThemeManager
@@ -44,7 +45,7 @@ from kivymd.uix.tab import MDTabsBase
 
 # Config Set.
 
-
+kivy.require("1.10.1")
 Window.size = (540, 960)
 Config.set('graphics', 'resizable', True)
 
