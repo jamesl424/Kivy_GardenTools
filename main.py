@@ -46,7 +46,7 @@ from kivymd.uix.tab import MDTabsBase
 # Config Set.
 
 kivy.require("1.11.1") # If issues - use 1.10.1 - apply same in .spec
-#Window.size = (540, 960)
+Window.size = (540, 960)
 Config.set('graphics', 'resizable', True)
 
 # kivy.metrics.MetricsBase.dpi = '440'
@@ -57,6 +57,8 @@ Config.set('graphics', 'resizable', True)
 ########################################################################################################################
 """Plants_Screen Class Creation"""
 ########################################################################################################################
+#TODO create iteration function over vegetable names to create all classes - to replace individual class replacement
+
 class Label_1(MDLabel):
     pass
 
@@ -87,6 +89,18 @@ class Plants_Home(MDScreen) :
 class Apples(MDScreen):
     pass
 
+class Asparagus(MDScreen):
+    pass
+
+class Aubergine(MDScreen):
+    pass
+
+class Basil(MDScreen):
+    pass
+
+class Broccoli(MDScreen):
+    pass
+
 class Carrots(MDScreen) :
     class Carrot_Wiki(FloatLayout, MDTabsBase):
         def adelaide_open(self):
@@ -100,7 +114,9 @@ class Carrots(MDScreen) :
     class Carrot_Guide(FloatLayout, MDTabsBase):
         pass
     class Carrot_Plants(FloatLayout, MDTabsBase):
-        pass
+        data = {
+            'carrot': 'Add Plant'
+        }
     class Carrot_Photos(FloatLayout, MDTabsBase):
         pass
 
@@ -148,10 +164,15 @@ class ItemConfirm(OneLineAvatarIconListItem) :
 ########################################################################################################################
 """.kv File Loading"""
 ########################################################################################################################
+#TODO iteration function to Builder.loadfile all .kv within kv folder
 
 Builder.load_file('kv files/Plants_Screen.kv')
 Builder.load_file('kv files/sm2_Screens.kv')
 Builder.load_file('kv files/Apples.kv')
+Builder.load_file('kv files/Asparagus.kv')
+Builder.load_file('kv files/Aubergine.kv')
+Builder.load_file('kv files/Basil.kv')
+Builder.load_file('kv files/Broccoli.kv')
 Builder.load_file('kv files/Carrots.kv')
 # Builder.load_file('kv files/Tasks_Screen.kv')
 # Builder.load_file('kv files/Wiki_Screen.kv')

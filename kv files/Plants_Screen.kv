@@ -1,4 +1,6 @@
 #TODO Build 'Back Button' function to allow reversal to Plants_Home from any plant screen (from within Toolbar)
+#New Screen Creation: Create list container (and edit details), create screen class, add screen to manager,
+#create .kv and add to builder
 
 <PlantsScreen>:
     on_enter: sm2.current = 'Plants_Home'
@@ -9,14 +11,17 @@
         Plants_Home:
         Apples:
             name: 'Apples'
+        Asparagus:
+            name: 'Asparagus'
+        Aubergine:
+            name: 'Aubergine'
+        Basil:
+            name: 'Basil'
+        Broccoli:
+            name: 'Broccoli'
         Carrots:
             name: 'Carrots'
-        Screen2_2:
-            name: 'Screen2_2'
-            MDLabel:
-                text: 'Screen2_2'
-        Screen2_3:
-        Screen2_4:
+
 
 <Plants_Home>:
     name: 'Plants_Home'
@@ -57,9 +62,109 @@
                                 root.manager.transition.direction = 'left'
                                 root.manager.current = 'Apples'
 
+                PlantsListContainer:                                                                                  ##
+                    canvas:
+                        RoundedRectangle:
+                            radius:[15,]
+                            pos: self.pos
+                            size: self.size
+                            source: "Resources/Images/asparagus_1.png"
+
+
+                    MDSeparator:
+                        size_hint_y: 0.6
+                        radius:[15,]
+                        border_radius:15
+
+                    PlantsListContent:
+                        PlantLabels:
+                            text: 'Asparagus'                                                                            ##
+
+                        MDIconButton:
+                            icon: 'arrow-right-bold'
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            on_press:
+                                root.manager.transition.direction = 'left'
+                                root.manager.current = 'Asparagus'
+
+                PlantsListContainer:                                                                                  ##
+                    canvas:
+                        RoundedRectangle:
+                            radius:[15,]
+                            pos: self.pos
+                            size: self.size
+                            source: "Resources/Images/aubergine_1.png"
+
+
+                    MDSeparator:
+                        size_hint_y: 0.6
+                        radius:[15,]
+                        border_radius:15
+
+                    PlantsListContent:
+                        PlantLabels:
+                            text: 'Aubergine'                                                                            ##
+
+                        MDIconButton:
+                            icon: 'arrow-right-bold'
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            on_press:
+                                root.manager.transition.direction = 'left'
+                                root.manager.current = 'Aubergine'
+
 
                 ListLetters:                                                                                          #B
                     text: 'B'
+
+                PlantsListContainer:                                                                                  ##
+                    canvas:
+                        RoundedRectangle:
+                            radius:[15,]
+                            pos: self.pos
+                            size: self.size
+                            source: "Resources/Images/basil_1.png"
+
+
+                    MDSeparator:
+                        size_hint_y: 0.6
+                        radius:[15,]
+                        border_radius:15
+
+                    PlantsListContent:
+                        PlantLabels:
+                            text: 'Basil'                                                                            ##
+
+                        MDIconButton:
+                            icon: 'arrow-right-bold'
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            on_press:
+                                root.manager.transition.direction = 'left'
+                                root.manager.current = 'Basil'
+
+                PlantsListContainer:                                                                                  ##
+                    canvas:
+                        RoundedRectangle:
+                            radius:[15,]
+                            pos: self.pos
+                            size: self.size
+                            source: "Resources/Images/broccoli_1.png"
+
+
+                    MDSeparator:
+                        size_hint_y: 0.6
+                        radius:[15,]
+                        border_radius:15
+
+                    PlantsListContent:
+                        PlantLabels:
+                            text: 'Broccoli'                                                                            ##
+
+                        MDIconButton:
+                            icon: 'arrow-right-bold'
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            on_press:
+                                root.manager.transition.direction = 'left'
+                                root.manager.current = 'Broccoli'
 
                 ListLetters:                                                                                          #C
                     text: 'C'
@@ -102,7 +207,7 @@
     orientation: 'vertical'
     radius:[15,]
     border_radius:15
-
+    height: (self.width/4)
 #TODO run .apk build to check sizing on screen.  Previous width was set too small
 
 <PlantsListContent>:
